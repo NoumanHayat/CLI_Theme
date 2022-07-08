@@ -11,7 +11,7 @@ import { View } from 'react-native';
 import { DataProvider } from './src/hooks';
 import { useTheme } from './src/hooks';
 import { Text, Block, Button, Checkbox, Image } from './src/components/';
-
+import Icon from 'react-native-vector-icons/Entypo';
 // import AppNavigation from './src/navigation/App';
 const App = () => {
   const { assets, colors, gradients, sizes, icons } = useTheme();
@@ -52,6 +52,7 @@ const App = () => {
             
             
           </Image>
+          <Icon name="user" size={15} color="black" /> 
       </Block>
     </DataProvider>
   );
