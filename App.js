@@ -7,9 +7,10 @@
  */
 import {useFonts} from 'expo-font';
 import React from 'react';
-import {Text, View} from 'react-native';
+import { View} from 'react-native';
 import {DataProvider} from './src/hooks';
 import {useTheme} from './src/hooks';
+import { Text} from './src/components/';
 
 // import AppNavigation from './src/navigation/App';
 const App = () => {

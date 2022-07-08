@@ -3,12 +3,11 @@ import {Platform, StyleSheet, Text, TextStyle} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 // import {LinearGradient} from 'expo-linear-gradient';
-import MaskedView from '@react-native-community/masked-view';
-
+import MaskedView from '@react-native-masked-view/masked-view';
+// @react-native-masked-view/masked-view
 import useTheme from '../hooks/useTheme';
-import {ITextProps} from '../constants/types';
 
-const Typography = (props: ITextProps) => {
+const Typography = (props) => {
   const {
     id = 'Text',
     children,
