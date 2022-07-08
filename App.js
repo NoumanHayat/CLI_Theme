@@ -10,7 +10,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { DataProvider } from './src/hooks';
 import { useTheme } from './src/hooks';
-import { Text, Block, Button, Checkbox, Image } from './src/components/';
+import { Text, Block, Button, Checkbox, Image, Input } from './src/components/';
 import Icon from 'react-native-vector-icons/Entypo';
 // import AppNavigation from './src/navigation/App';
 const App = () => {
@@ -40,19 +40,26 @@ const App = () => {
         />
         <Image
           source={assets.card1}
-          color={colors.checkboxIcon}  
+          color={colors.checkboxIcon}
         />
         <Image
-            background
-            resizeMode="cover"
-            padding={sizes.sm}
-            paddingBottom={sizes.l}
-            radius={sizes.cardRadius}
-            source={assets.background}>
-            
-            
-          </Image>
-          <Icon name="user" size={15} color="black" /> 
+          background
+          resizeMode="cover"
+          padding={sizes.sm}
+          paddingBottom={sizes.l}
+          radius={sizes.cardRadius}
+          source={assets.background}>
+
+
+        </Image>
+        <Icon name="user" size={15} color="black" />
+        <Button social="facebook" />
+        <Input
+          search
+          label="Search"
+          marginBottom={sizes.sm}
+          placeholder="Search with label"
+        />
       </Block>
     </DataProvider>
   );

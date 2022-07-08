@@ -7,7 +7,7 @@ import {
   Platform,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-// import {Ionicons} from '@expo/vector-icons';
+ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import useTheme from '../hooks/useTheme';
 
@@ -247,11 +247,11 @@ const Button = ({
         onPress={handlePress}
         {...props}
         style={buttonStyles}>
-        {/* <Ionicons
+        <Ionicons
           name={socialIcon}
           size={sizes.socialIconSize}
           color={colors.white}
-        /> */}
+        />
       </TouchableOpacity>
     );
   }

@@ -1,6 +1,6 @@
  import Block from './Block';
  import Button from './Button';
-// import Input from './Input';
+import Input from './Input';
 import Text from './Text';
 // import Modal from './Modal';
 // import Switch from './Switch';
@@ -11,7 +11,7 @@ import Image from './Image';
 export {
    Block,
    Button,
-  // Input,
+   Input,
   Text,
   // Switch,
   Checkbox,
