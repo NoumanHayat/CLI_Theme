@@ -5,21 +5,21 @@
  * @format
  * @flow strict-local
  */
-import {useFonts} from 'expo-font';
+import { useFonts } from 'expo-font';
 import React from 'react';
-import { View} from 'react-native';
-import {DataProvider} from './src/hooks';
-import {useTheme} from './src/hooks';
-import { Text,Block,Button} from './src/components/';
+import { View } from 'react-native';
+import { DataProvider } from './src/hooks';
+import { useTheme } from './src/hooks';
+import { Text, Block, Button, Checkbox, Image } from './src/components/';
 
 // import AppNavigation from './src/navigation/App';
 const App = () => {
-   const {assets, colors, gradients, sizes} = useTheme();
+  const { assets, colors, gradients, sizes, icons } = useTheme();
   return (
-     <DataProvider>
+    <DataProvider>
       <Block padding={15}>
-      <Text  p color={colors.primary}>hello</Text>
-      <Button
+        <Text p color={colors.primary}>hello</Text>
+        <Button
           gradient={gradients.info}
           marginBottom={sizes.base}
           onPress={() => {
@@ -31,10 +31,30 @@ const App = () => {
             info
           </Text>
         </Button>
+
+        <Text color={colors.primary}>hello</Text>
+        <Checkbox
+          marginRight={sizes.sm}
+          checked={(checked) => { alert("ok") }}
+          onfPress={(value) => { alert(value) }}
+        />
+        <Image
+          source={assets.card1}
+          color={colors.checkboxIcon}  
+        />
+        <Image
+            background
+            resizeMode="cover"
+            padding={sizes.sm}
+            paddingBottom={sizes.l}
+            radius={sizes.cardRadius}
+            source={assets.background}>
+            
+            
+          </Image>
       </Block>
     </DataProvider>
   );
 };
 
 export default App;
- 

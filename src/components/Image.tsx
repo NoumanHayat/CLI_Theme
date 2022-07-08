@@ -6,7 +6,6 @@ import {
   ImageBackground,
   Platform,
 } from 'react-native';
-import {IImageProps} from '../constants/types';
 
 import useTheme from '../hooks/useTheme';
 
@@ -38,7 +37,7 @@ const Image = ({
   marginTop,
   marginBottom,
   ...props
-}: IImageProps) => {
+}) => {
   const {colors, sizes} = useTheme();
 
   const imageStyles = StyleSheet.flatten([

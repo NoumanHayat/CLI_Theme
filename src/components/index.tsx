@@ -4,8 +4,8 @@
 import Text from './Text';
 // import Modal from './Modal';
 // import Switch from './Switch';
-// import Checkbox from './Checkbox';
-// import Image from './Image';
+ import Checkbox from './Checkbox';
+import Image from './Image';
 
 
 export {
@@ -14,7 +14,7 @@ export {
   // Input,
   Text,
   // Switch,
-  // Checkbox,
-  // Image,
+  Checkbox,
+   Image,
   // Modal,
 };
