@@ -8,14 +8,14 @@
 import {useFonts} from 'expo-font';
 import React from 'react';
 import {Text, View} from 'react-native';
-// import {DataProvider} from './src/hooks';
+ import {DataProvider} from './src/hooks';
 
 // import AppNavigation from './src/navigation/App';
 const App = () => {
   return (
-    <View>
+    // <DataProvider>
       <Text>hello</Text>
-    </View>
+    // </DataProvider>
   );
 };
 

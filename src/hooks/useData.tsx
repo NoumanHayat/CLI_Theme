@@ -17,7 +17,7 @@ import {
   CATEGORIES,
   ARTICLES,
 } from '../constants/mocks';
-import {light,dark} from '../constants';
+import {light, dark} from '../constants';
 
 export const DataContext = React.createContext({});
 

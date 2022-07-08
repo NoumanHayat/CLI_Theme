@@ -3,5 +3,13 @@ module.exports = {
   bracketSameLine: true,
   bracketSpacing: false,
   singleQuote: true,
+  endOfLine: auto,
   trailingComma: 'all',
+  'prettier/prettier': [
+    'error',
+    {},
+    {
+      usePrettierrc: false,
+    },
+  ],
 };
