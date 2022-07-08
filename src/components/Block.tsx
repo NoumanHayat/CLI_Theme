@@ -4,17 +4,16 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  View,
+  View, 
   ViewStyle,
 } from 'react-native';
 import {BlurView} from 'expo-blur';
-import {LinearGradient} from 'expo-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 import useTheme from '../hooks/useTheme';
-import {IBlockProps} from '../constants/types';
 
-const Block = (props: IBlockProps) => {
+const Block = (props) => {
   const {
     id = 'Block',
     children,
