@@ -1,5 +1,5 @@
-// import Block from './Block';
-// import Button from './Button';
+ import Block from './Block';
+ import Button from './Button';
 // import Input from './Input';
 import Text from './Text';
 // import Modal from './Modal';
@@ -9,8 +9,8 @@ import Text from './Text';
 
 
 export {
-  // Block,
-  // Button,
+   Block,
+   Button,
   // Input,
   Text,
   // Switch,

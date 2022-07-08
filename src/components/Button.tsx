@@ -7,11 +7,9 @@ import {
   Platform,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Ionicons} from '@expo/vector-icons';
-import * as Haptics from 'expo-haptics';
+// import {Ionicons} from '@expo/vector-icons';
 
 import useTheme from '../hooks/useTheme';
-import {IButtonProps} from '../constants/types';
 
 const Button = ({
   id = 'Button',
@@ -68,8 +66,10 @@ const Button = ({
   vibrate,
   vibrateRepeat,
   onPress,
+  end,
+  start,
   ...props
-}: IButtonProps) => {
+}) => {
   const {colors, sizes} = useTheme();
   const colorIndex = primary
     ? 'primary'
@@ -179,9 +179,7 @@ const Button = ({
       }
 
       /* haptic feedback onPress */
-      if (haptic) {
-        Haptics.selectionAsync();
-      }
+     
     },
     [haptic, vibrate, vibrateRepeat, onPress],
   );
@@ -224,10 +222,12 @@ const Button = ({
         <LinearGradient
           style={gradientStyles}
           colors={gradient}
-          start={[0, 1]}
-          end={[1, 0]}>
+          end={end || {x:0, y:1}}
+          start={start || {x:1, y:0}}
+          >
           {children}
         </LinearGradient>
+       
       </TouchableOpacity>
     );
   }
@@ -247,11 +247,11 @@ const Button = ({
         onPress={handlePress}
         {...props}
         style={buttonStyles}>
-        <Ionicons
+        {/* <Ionicons
           name={socialIcon}
           size={sizes.socialIconSize}
           color={colors.white}
-        />
+        /> */}
       </TouchableOpacity>
     );
   }

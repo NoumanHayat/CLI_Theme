@@ -194,8 +194,8 @@ const Typography = (props) => {
         }>
         <LinearGradient
           colors={gradient}
-          end={end || [0.2, 0]}
-          start={start || [0, 0]}
+          end={end || {x:0, y:1}}
+          start={start || {x:1, y:0}}
           style={{flex: 1, height: gradientHeight, flexWrap: 'wrap'}}
         />
       </MaskedView>

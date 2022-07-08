@@ -200,8 +200,8 @@ const Block = (props) => {
         {...blockID}
         colors={gradient}
         style={blockStyles}
-        end={end || [1, 0]}
-        start={start || [0, 0]}
+        end={end || {x:0, y:1}}
+          start={start || {x:1, y:0}}
         {...rest}>
         {children}
       </LinearGradient>
