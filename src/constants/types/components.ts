@@ -16,7 +16,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {BlurProps} from 'expo-blur';
-import {LinearGradientPoint} from 'react-native-linear-gradient';
+import {LinearGradientProps} from 'react-native-linear-gradient';
 import {ISpacing, ITheme} from './theme';
 
 /**
@@ -231,12 +231,12 @@ export interface IBlockProps
    * Renders LinearGradient start points
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  start?: LinearGradientPoint;
+  start?: LinearGradientProps;
   /**
    * Renders LinearGradient end points
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  end?: LinearGradientPoint;
+  end?: LinearGradientProps;
 }
 
 /**
@@ -817,12 +817,12 @@ export interface ITextProps extends TextProps, ISpacing {
    * Renders LinearGradient start points
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  start?: LinearGradientPoint;
+  start?: LinearGradientProps;
   /**
    * Renders LinearGradient end points
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  end?: LinearGradientPoint;
+  end?: LinearGradientProps;
   /**
    * Renders a Text with predefined fontSize from theme sizes.h1
    * @see https://reactnative.dev/docs/text-style-props#fontsize
