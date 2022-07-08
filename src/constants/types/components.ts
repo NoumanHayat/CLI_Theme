@@ -16,7 +16,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {BlurProps} from 'expo-blur';
-import {LinearGradientPoint} from 'expo-linear-gradient';
+import {LinearGradientPoint} from 'react-native-linear-gradient';
 import {ISpacing, ITheme} from './theme';
 
 /**

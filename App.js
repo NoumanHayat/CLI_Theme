@@ -13,9 +13,9 @@ import {Text, View} from 'react-native';
 // import AppNavigation from './src/navigation/App';
 const App = () => {
   return (
-    // <DataProvider>
+    <DataProvider>
       <Text>hello</Text>
-    // </DataProvider>
+      </DataProvider>
   );
 };
 
