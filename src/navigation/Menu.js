@@ -247,7 +247,7 @@
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Alert, Animated, Linking, StyleSheet } from 'react-native';
-
+import * as t from '../constants/translations/en.json';
 import {
   useIsDrawerOpen,
   createDrawerNavigator,
@@ -257,7 +257,7 @@ import {
 } from '@react-navigation/drawer';
 
 import Screens from './Screens';
-import { useData, useTheme, useTranslation } from '../hooks';
+import { useData, useTheme } from '../hooks';
 
 const Drawer = createDrawerNavigator();
 import { FlatList, View } from 'react-native';
@@ -308,11 +308,11 @@ const ScreensStack = () => {
   );
 };
 //===================================================================================================
-const DrawerContent = (
+const DrawerContent = async (
   props
 ) => {
+
   const {navigation} = props;
-  const {t} = useTranslation();
   const {isDark, handleIsDark} = useData();
   const [active, setActive] = useState('Home');
   const {assets, colors, gradients, sizes} = useTheme();
@@ -423,7 +423,7 @@ const DrawerContent = (
           marginTop={sizes.sm}
           marginBottom={sizes.s}
           onPress={() =>
-            handleWebLink('https://github.com/creativetimofficial')
+            handleWebLink('https://github.com/NoumanHayat')
           }>
           <Block
             flex={0}
@@ -465,6 +465,7 @@ const DrawerContent = (
 
 //===================================================================================================
 const App = () => {
+  console.log(t.screens.home);
   const { assets, colors, fonts, gradients, sizes } = useTheme();
   return (
     <Block safe>
