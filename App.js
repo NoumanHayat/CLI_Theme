@@ -6,18 +6,22 @@
  * @flow strict-local
  */
 import { useFonts } from 'expo-font';
-import React from 'react';
-import { View } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList,View } from 'react-native';
 import { DataProvider } from './src/hooks';
 import { useTheme } from './src/hooks';
-import { Text, Block, Button, Checkbox, Image, Input } from './src/components/';
+import { Text, Block, Button, Checkbox, Image, Input, Switch ,Modal } from './src/components/';
 import Icon from 'react-native-vector-icons/Entypo';
 // import AppNavigation from './src/navigation/App';
 const App = () => {
+  const [showModal, setModal] = useState(false);
+  const [quantity, setQuantity] = useState('01');
+  const [switch1, setSwitch1] = useState(true);
+  const [switch2, setSwitch2] = useState(false);
   const { assets, colors, gradients, sizes, icons } = useTheme();
   return (
     <DataProvider>
-      <Block padding={15}>
+      {/* <Block padding={15}>
         <Text p color={colors.primary}>hello</Text>
         <Button
           gradient={gradients.info}
@@ -60,7 +64,16 @@ const App = () => {
           marginBottom={sizes.sm}
           placeholder="Search with label"
         />
+      </Block> */}
+      <Block row flex={0} align="center" justify="space-between">
+        <Text>Switch is {switch1 ? 'ON' : 'OFF'}</Text>
+        <Switch
+          checked={switch1}
+          onPress={(checked) => setSwitch1(checked)}
+        />
       </Block>
+   
+  
     </DataProvider>
   );
 };

@@ -1,20 +1,20 @@
- import Block from './Block';
- import Button from './Button';
+import Block from './Block';
+import Button from './Button';
 import Input from './Input';
 import Text from './Text';
-// import Modal from './Modal';
-// import Switch from './Switch';
- import Checkbox from './Checkbox';
+import Modal from './Modal';
+import Switch from './Switch';
+import Checkbox from './Checkbox';
 import Image from './Image';
 
 
 export {
-   Block,
-   Button,
-   Input,
+  Block,
+  Button,
+  Input,
   Text,
-  // Switch,
+  Switch,
   Checkbox,
-   Image,
-  // Modal,
+  Image,
+  Modal,
 };

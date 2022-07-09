@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, Modal as RNModal, ViewStyle, Platform} from 'react-native';
 
 import {useTheme} from '../hooks/';
-import {IModalProps} from '../constants/types';
 
 import Block from './Block';
 import Button from './Button';
@@ -14,7 +13,7 @@ const Modal = ({
   style,
   onRequestClose,
   ...props
-}: IModalProps) => {
+}) => {
   const {assets, colors, sizes} = useTheme();
   const modalStyles = StyleSheet.flatten([style, {}]) as ViewStyle;
 
