@@ -4,13 +4,14 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  View, 
+  View,
   ViewStyle,
+  StatusBar
 } from 'react-native';
-import {BlurView} from 'expo-blur';
+import { BlurView } from 'expo-blur';
 import LinearGradient from 'react-native-linear-gradient';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {IBlockProps} from '../constants/types';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { IBlockProps } from '../constants/types';
 import useTheme from '../hooks/useTheme';
 
 const Block = (props: IBlockProps) => {
@@ -72,35 +73,35 @@ const Block = (props: IBlockProps) => {
     start,
     ...rest
   } = props;
-  const {colors, sizes} = useTheme();
+  const { colors, sizes } = useTheme();
 
   const colorIndex = primary
     ? 'primary'
     : secondary
-    ? 'secondary'
-    : tertiary
-    ? 'tertiary'
-    : black
-    ? 'black'
-    : white
-    ? 'white'
-    : gray
-    ? 'gray'
-    : danger
-    ? 'danger'
-    : warning
-    ? 'warning'
-    : success
-    ? 'success'
-    : info
-    ? 'info'
-    : null;
+      ? 'secondary'
+      : tertiary
+        ? 'tertiary'
+        : black
+          ? 'black'
+          : white
+            ? 'white'
+            : gray
+              ? 'gray'
+              : danger
+                ? 'danger'
+                : warning
+                  ? 'warning'
+                  : success
+                    ? 'success'
+                    : info
+                      ? 'info'
+                      : null;
 
   const blockColor = color
     ? color
     : colorIndex
-    ? colors?.[colorIndex]
-    : undefined;
+      ? colors?.[colorIndex]
+      : undefined;
 
   const blockStyles = StyleSheet.flatten([
     style,
@@ -120,7 +121,7 @@ const Block = (props: IBlockProps) => {
         borderRadius: sizes.cardRadius,
         padding: sizes.cardPadding,
         shadowColor: colors.shadow,
-        shadowOffset: { 
+        shadowOffset: {
           width: sizes.shadowOffsetWidth,
           height: sizes.shadowOffsetHeight,
         },
@@ -128,51 +129,55 @@ const Block = (props: IBlockProps) => {
         shadowRadius: sizes.shadowRadius,
         elevation: sizes.elevation,
       }),
-      ...(margin !== undefined && {margin}),
-      ...(marginBottom && {marginBottom}),
-      ...(marginTop && {marginTop}),
-      ...(marginHorizontal && {marginHorizontal}),
-      ...(marginVertical && {marginVertical}),
-      ...(marginRight && {marginRight}),
-      ...(marginLeft && {marginLeft}),
-      ...(padding !== undefined && {padding}),
-      ...(paddingBottom && {paddingBottom}),
-      ...(paddingTop && {paddingTop}),
-      ...(paddingHorizontal && {paddingHorizontal}),
-      ...(paddingVertical && {paddingVertical}),
-      ...(paddingRight && {paddingRight}),
-      ...(paddingLeft && {paddingLeft}),
-      ...(radius && {borderRadius: radius}),
-      ...(height && {height}),
-      ...(width && {width}),
-      ...(overflow && {overflow}),
-      ...(flex !== undefined && {flex}),
-      ...(row && {flexDirection: 'row'}),
-      ...(align && {alignItems: align}),
-      ...(center && {justifyContent: 'center'}),
-      ...(justify && {justifyContent: justify}),
-      ...(wrap && {flexWrap: wrap}),
-      ...(blockColor && {backgroundColor: blockColor}),
+      ...(margin !== undefined && { margin }),
+      ...(marginBottom && { marginBottom }),
+      ...(marginTop && { marginTop }),
+      ...(marginHorizontal && { marginHorizontal }),
+      ...(marginVertical && { marginVertical }),
+      ...(marginRight && { marginRight }),
+      ...(marginLeft && { marginLeft }),
+      ...(padding !== undefined && { padding }),
+      ...(paddingBottom && { paddingBottom }),
+      ...(paddingTop && { paddingTop }),
+      ...(paddingHorizontal && { paddingHorizontal }),
+      ...(paddingVertical && { paddingVertical }),
+      ...(paddingRight && { paddingRight }),
+      ...(paddingLeft && { paddingLeft }),
+      ...(radius && { borderRadius: radius }),
+      ...(height && { height }),
+      ...(width && { width }),
+      ...(overflow && { overflow }),
+      ...(flex !== undefined && { flex }),
+      ...(row && { flexDirection: 'row' }),
+      ...(align && { alignItems: align }),
+      ...(center && { justifyContent: 'center' }),
+      ...(justify && { justifyContent: justify }),
+      ...(wrap && { flexWrap: wrap }),
+      ...(blockColor && { backgroundColor: blockColor }),
       ...(outlined && {
         borderWidth: 1,
         borderColor: blockColor,
         backgroundColor: 'transparent',
       }),
-      ...(position && {position}),
-      ...(right !== undefined && {right}),
-      ...(left !== undefined && {left}),
-      ...(top !== undefined && {top}),
-      ...(bottom !== undefined && {bottom}),
+      ...(position && { position }),
+      ...(right !== undefined && { right }),
+      ...(left !== undefined && { left }),
+      ...(top !== undefined && { top }),
+      ...(bottom !== undefined && { bottom }),
     },
   ]) as ViewStyle;
 
   // generate component testID or accessibilityLabel based on Platform.OS
   const blockID =
-    Platform.OS === 'android' ? {accessibilityLabel: id} : {testID: id};
+    Platform.OS === 'android' ? { accessibilityLabel: id } : { testID: id };
 
   if (safe) {
     return (
-      <SafeAreaView {...blockID} {...rest} style={blockStyles}>
+      // working here
+      <SafeAreaView {...blockID} {...rest} style={[{
+        flex: 1,
+        marginTop: StatusBar.currentHeight
+      }, blockStyles]}>
         {children}
       </SafeAreaView>
     );
@@ -200,8 +205,8 @@ const Block = (props: IBlockProps) => {
         {...blockID}
         colors={gradient}
         style={blockStyles}
-        end={end || {x:0, y:1}}
-          start={start || {x:1, y:0}}
+        end={end || { x: 0, y: 1 }}
+        start={start || { x: 1, y: 0 }}
         {...rest}>
         {children}
       </LinearGradient>

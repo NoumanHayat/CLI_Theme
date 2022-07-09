@@ -31,7 +31,7 @@ export default () => {
   // //   return <AppLoading />;
   // // }
 
-  const navigationTheme = {
+  const navigationTheme = { 
     ...DefaultTheme,
     dark: isDark,
     colors: {

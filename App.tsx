@@ -91,5 +91,7 @@ export default function App() {
     <DataProvider>
       <AppNavigation />
     </DataProvider>
+   
+   
   );
 }

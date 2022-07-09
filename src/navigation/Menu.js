@@ -247,20 +247,20 @@
  */
 
 import React, { useState } from 'react';
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View } from 'react-native';
+import { useData, useTheme, useTranslation } from '../hooks/';
+import { Block, Button, Image, Input, Product, Text } from '../components/';
+
 
 const App = () => {
+  const { assets, colors, fonts, gradients, sizes } = useTheme();
 
   return (
-    <View><Text>okoooooooooooooooooooooooooooooo</Text>
-      <Text>okoooooooooooooooooooooooooooooo</Text>
-      <Text>okoooooooooooooooooooooooooooooo</Text>
-      <Text>okoooooooooooooooooooooooooooooo</Text>
-      <Text>okoooooooooooooooooooooooooooooo</Text>
-      <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Regular' }}>okoooooooooooooooooooooooooooooo</Text>
-      <Text style={{ fontSize: 20, fontFamily: 'times new roman' }}>okoooooooooooooooooooooooooooooo</Text>
+    <Block safe>
+      {/* <Text p font={fonts?.[true ? 'medium' : 'normal']}>okoooooooooooooooooooooooooooooo</Text> */}
+      <Text h3 style={{ fontFamily: 'OpenSans-Regular' }}>okoooooooooooooooooooooooooooooo</Text>
 
-    </View>
+    </Block>
   );
 };
 
