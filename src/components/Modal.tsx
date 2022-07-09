@@ -6,6 +6,7 @@ import {useTheme} from '../hooks/';
 import Block from './Block';
 import Button from './Button';
 import Image from './Image';
+import {IModalProps} from '../constants/types';
 
 const Modal = ({
   id = 'Modal',
@@ -13,7 +14,7 @@ const Modal = ({
   style,
   onRequestClose,
   ...props
-}) => {
+}: IModalProps) => {
   const {assets, colors, sizes} = useTheme();
   const modalStyles = StyleSheet.flatten([style, {}]) as ViewStyle;
 

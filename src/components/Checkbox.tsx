@@ -5,13 +5,14 @@ import {Platform, Pressable} from 'react-native';
 import {useTheme} from '../hooks/';
 import Block from '../components/Block';
 import Image from '../components/Image';
+import {ICheckboxProps} from '../constants/types';
 
 const Checkbox = ({
   onPress,
   haptic = true,
   id = 'Checkbox',
   ...props
-}) => {
+}: ICheckboxProps) => {
   const {colors, icons, sizes} = useTheme();
   const [checked, setChecked] = useState(false);
 

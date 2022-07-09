@@ -10,10 +10,10 @@ import {
 import {BlurView} from 'expo-blur';
 import LinearGradient from 'react-native-linear-gradient';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-
+import {IBlockProps} from '../constants/types';
 import useTheme from '../hooks/useTheme';
 
-const Block = (props) => {
+const Block = (props: IBlockProps) => {
   const {
     id = 'Block',
     children,

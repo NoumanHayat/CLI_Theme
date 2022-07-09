@@ -1,7 +1,14 @@
+import {
+  ITheme,
+  ThemeColors,
+  ThemeGradients,
+  ThemeSizes,
+  ThemeSpacing,
+} from './types';
 
 import {THEME as commonTheme} from './theme';
 
-export const COLORS = {
+export const COLORS: ThemeColors = {
   // default text color
   text: '#252F40',
   // opposite of text color
@@ -72,7 +79,7 @@ export const COLORS = {
   link: '#CB0C9F',
 };
 
-export const GRADIENTS = {
+export const GRADIENTS: ThemeGradients = {
   primary: ['#FF0080', '#7928CA'],
   secondary: ['#A8B8D8', '#627594'],
   info: ['#21D4FD', '#2152FF'],
@@ -103,7 +110,7 @@ export const GRADIENTS = {
   custom8:['#8E2DE2','#4A00E0'],
 };
 
-export const SIZES = {
+export const SIZES: ThemeSizes = {
   // global sizes
   base: 8,
   text: 14,
@@ -166,7 +173,7 @@ export const SIZES = {
   multiplier: 2,
 };
 
-export const SPACING = {
+export const SPACING: ThemeSpacing = {
   /** xs: 4px */
   xs: SIZES.base * 0.5,
   /** s: 8px */
@@ -185,7 +192,7 @@ export const SPACING = {
   xxl: SIZES.base * 7,
 };
 
-export const THEME = {
+export const THEME: ITheme = {
   ...commonTheme,
   colors: COLORS,
   gradients: GRADIENTS,

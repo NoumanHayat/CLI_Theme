@@ -1,10 +1,17 @@
 import {Dimensions, Platform} from 'react-native';
-
+import {
+  ICommonTheme,
+  ThemeAssets,
+  ThemeFonts,
+  ThemeIcons,
+  ThemeLineHeights,
+  ThemeWeights,
+} from './types';
 
 const {width, height} = Dimensions.get('window');
 
 // Naming source: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Common_weight_name_mapping
-export const WEIGHTS= {
+export const WEIGHTS: ThemeWeights = {
   text: 'normal',
   h1: Platform.OS === 'ios' ? '700' : 'normal',
   h2: Platform.OS === 'ios' ? '700' : 'normal',
@@ -24,7 +31,7 @@ export const WEIGHTS= {
   black: Platform.OS === 'ios' ? '900' : 'normal',
 };
 
-export const ICONS = {
+export const ICONS: ThemeIcons = {
   apple: require('../assets/icons/apple.png'),
   google: require('../assets/icons/google.png'),
   facebook: require('../assets/icons/facebook.png'),
@@ -62,7 +69,7 @@ export const ICONS = {
   warning: require('../assets/icons/warning.png'),
 };
 
-export const ASSETS = {
+export const ASSETS: ThemeAssets = {
   // fonts
   OpenSansLight: require('../assets/fonts/OpenSans-Light.ttf'),
   OpenSansRegular: require('../assets/fonts/OpenSans-Regular.ttf'),
@@ -110,7 +117,7 @@ export const ASSETS = {
   shoppingItem2: require('../assets/images/shopping/item2.png'),
 }; 
  
-export const FONTS = {
+export const FONTS: ThemeFonts = {
   // based on font size
   text: 'OpenSans-Regular',
   h1: 'OpenSans-Bold',
@@ -132,7 +139,7 @@ export const FONTS = {
   black: 'OpenSans-ExtraBold',
 };
 
-export const LINE_HEIGHTS = {
+export const LINE_HEIGHTS: ThemeLineHeights = {
   // font lineHeight
   text: 22,
   h1: 60,
@@ -143,7 +150,7 @@ export const LINE_HEIGHTS = {
   p: 22,
 };
 
-export const THEME = {
+export const THEME: ICommonTheme = {
   icons: ICONS,
   assets: {...ICONS, ...ASSETS},
   fonts: FONTS,

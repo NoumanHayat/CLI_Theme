@@ -6,8 +6,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
 // @react-native-masked-view/masked-view
 import useTheme from '../hooks/useTheme';
+import {ITextProps} from '../constants/types';
 
-const Typography = (props) => {
+const Typography = (props: ITextProps) => {
   const {
     id = 'Text',
     children,

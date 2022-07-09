@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
  import Ionicons from 'react-native-vector-icons/Ionicons';
+ import {IButtonProps} from '../constants/types';
 
 import useTheme from '../hooks/useTheme';
 
@@ -69,7 +70,7 @@ const Button = ({
   end,
   start,
   ...props
-}) => {
+}: IButtonProps) => {
   const {colors, sizes} = useTheme();
   const colorIndex = primary
     ? 'primary'

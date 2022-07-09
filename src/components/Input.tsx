@@ -11,6 +11,7 @@ import Block from './Block';
 import Text from './Text';
 
 import useTheme from '../hooks/useTheme';
+import {IInputProps} from '../constants/types';
 
 const Input = ({
   id = 'Input',
@@ -41,7 +42,7 @@ const Input = ({
   onFocus,
   onBlur,
   ...props
-}) => {
+}:IInputProps) => {
   const {assets, colors, sizes} = useTheme();
   const [isFocused, setFocused] = useState(false);
 
