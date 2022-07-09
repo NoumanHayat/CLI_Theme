@@ -10,7 +10,6 @@
     "appName": "Nouman's App",
     "appVersion": "1.0",
     "buildVersion": "1.0",
-    "expoVersion": "Expo version",
     "about": "About",
     "visit": "Visit",
     "posted": "Posted on {{date}}",
@@ -58,7 +57,7 @@
     "name": "NH UI",
     "fullname": "NH UI Kit",
     "native": "React Native",
-    "link": "https://irfan-shahid.com/"
+    "link": "https://noumanhayat.com/"
   },
   "darkMode": "Dark Mode",
   "screens": {
