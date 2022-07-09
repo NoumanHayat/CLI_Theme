@@ -207,7 +207,7 @@
 //             checked={isDark}
 //             onPress={(checked) => {
 //               handleIsDark(checked);
-              
+
 //             }}
 //           />
 //         </Block>
@@ -245,21 +245,23 @@
  * @format
  * @flow strict-local
  */
- 
- import React, { useState } from 'react';
- import { FlatList, View,Text } from 'react-native';
 
- const App = () => {
+import React, { useState } from 'react';
+import { FlatList, View, Text } from 'react-native';
 
-   return (
-      <View><Text>okoooooooooooooooooooooooooooooo</Text>
+const App = () => {
+
+  return (
+    <View><Text>okoooooooooooooooooooooooooooooo</Text>
       <Text>okoooooooooooooooooooooooooooooo</Text>
       <Text>okoooooooooooooooooooooooooooooo</Text>
       <Text>okoooooooooooooooooooooooooooooo</Text>
       <Text>okoooooooooooooooooooooooooooooo</Text>
-      <Text>okoooooooooooooooooooooooooooooo</Text></View>
-   );
- };
- 
- export default App;
- 
+      <Text style={{ fontSize: 20, fontFamily: 'OpenSans-Regular' }}>okoooooooooooooooooooooooooooooo</Text>
+      <Text style={{ fontSize: 20, fontFamily: 'times new roman' }}>okoooooooooooooooooooooooooooooo</Text>
+
+    </View>
+  );
+};
+
+export default App;
