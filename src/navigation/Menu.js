@@ -312,10 +312,10 @@ const DrawerContent = async (
   props
 ) => {
 
-  const {navigation} = props;
-  const {isDark, handleIsDark} = useData();
+  const { navigation } = props;
+  const { isDark, handleIsDark } = useData();
   const [active, setActive] = useState('Home');
-  const {assets, colors, gradients, sizes} = useTheme();
+  const { assets, colors, gradients, sizes } = useTheme();
   const labelColor = colors.text;
 
   const handleNavigation = useCallback(
@@ -330,20 +330,20 @@ const DrawerContent = async (
 
   // screen list for Drawer menu
   const screens = [
-    {name: t('screens.home'), to: 'Home', icon: assets.home},
-    {name: t('screens.components'), to: 'Components', icon: assets.components},
-    {name: t('screens.articles'), to: 'Articles', icon: assets.document},
-    {name: t('screens.rental'), to: 'Pro', icon: assets.rental},
-    {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
-    {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
-    {name: t('screens.register'), to: 'Register', icon: assets.register},
-    {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
-    {name: t('screens.creater'), to: 'Creater', icon: assets.extras},
-    {name: t('screens.buttonExample'), to: 'ButtonExample', icon: assets.extras},
-    {name: t('screens.cardExample'), to: 'CardExample', icon: assets.extras},
-    {name: t('screens.inputExample'), to: 'InputExample', icon: assets.extras},
-    {name: t('screens.shopping'), to: 'Shopping', icon: assets.extras},
-  ]; 
+    { name: t('screens.home'), to: 'Home', icon: assets.home },
+    { name: t('screens.components'), to: 'Components', icon: assets.components },
+    { name: t('screens.articles'), to: 'Articles', icon: assets.document },
+    { name: t('screens.rental'), to: 'Pro', icon: assets.rental },
+    { name: t('screens.profile'), to: 'Profile', icon: assets.profile },
+    { name: t('screens.settings'), to: 'Pro', icon: assets.settings },
+    { name: t('screens.register'), to: 'Register', icon: assets.register },
+    { name: t('screens.extra'), to: 'Pro', icon: assets.extras },
+    { name: t('screens.creater'), to: 'Creater', icon: assets.extras },
+    { name: t('screens.buttonExample'), to: 'ButtonExample', icon: assets.extras },
+    { name: t('screens.cardExample'), to: 'CardExample', icon: assets.extras },
+    { name: t('screens.inputExample'), to: 'InputExample', icon: assets.extras },
+    { name: t('screens.shopping'), to: 'Shopping', icon: assets.extras },
+  ];
 
   return (
     <DrawerContentScrollView
@@ -351,7 +351,7 @@ const DrawerContent = async (
       scrollEnabled
       removeClippedSubviews
       renderToHardwareTextureAndroid
-      contentContainerStyle={{paddingBottom: sizes.padding}}>
+      contentContainerStyle={{ paddingBottom: sizes.padding }}>
       <Block paddingHorizontal={sizes.padding} >
         <Block flex={0} row align="center" marginBottom={sizes.l}>
           <Image
@@ -465,17 +465,28 @@ const DrawerContent = async (
 
 //===================================================================================================
 const App = () => {
-  console.log(t.screens.home);
+  const { translations, changeLanguage } = useData();
+  console.log("okk=" + translations.creater.name);
+
   const { assets, colors, fonts, gradients, sizes } = useTheme();
   return (
     <Block safe>
-      <Text h3 style={{ fontFamily: 'OpenSans-Regular' }}>okoooooooooooooooooooooooooooooo</Text>
-
+      <Text h3 style={{ fontFamily: 'OpenSans-Regular' }}>{translations.creater.name}</Text>
+      <Button
+        gradient={gradients.primary}
+        marginBottom={sizes.base}
+        onPress={() => {
+          changeLanguage()
+        }}>
+        <Text white bold transform="uppercase">
+          Change Language
+        </Text>
+      </Button>
     </Block>
   );
 };
 
-export default App; 
+export default App;
 
 
 // export default () => {

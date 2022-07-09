@@ -1,16 +1,17 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import Storage from '@react-native-async-storage/async-storage';
 
 
- 
 
-import {light, dark} from '../constants';
 
+import { light, dark } from '../constants';
+import { en, ch } from '../constants/translations';
 export const DataContext = React.createContext({});
- 
-export const DataProvider = ({children}: {children: React.ReactNode}) => {
+
+export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDark, setIsDark] = useState(false);
   const [theme, setTheme] = useState(light);
+  const [translations, setTranslations] = useState(en);
 
   // get isDark mode from storage
   const getIsDark = useCallback(async () => {
@@ -23,6 +24,20 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     }
   }, [setIsDark]);
 
+  const changeLanguage = useCallback(async () => {
+    // get preferance gtom storage
+    const language = await Storage.getItem('Language');
+
+    if (language == null || language == 'English' || language == undefined) {
+      setTranslations(ch);
+      await Storage.setItem('Language', 'Chinese');
+    } else {
+      setTranslations(en);
+      await Storage.setItem('Language', 'English');
+    }
+  }, []);
+
+
   // handle isDark mode
   const handleIsDark = useCallback(
     (payload: boolean) => {
@@ -33,9 +48,6 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     },
     [setIsDark],
   );
-
-  
-
   // get initial data for: isDark & language
   useEffect(() => {
     getIsDark();
@@ -51,6 +63,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     handleIsDark,
     theme,
     setTheme,
+    translations,
+    changeLanguage
   };
 
   return (
