@@ -173,7 +173,7 @@ const Block = (props: IBlockProps) => {
 
   if (safe) {
     return (
-      // working here
+     
       <SafeAreaView {...blockID} {...rest} style={[{
         flex: 1,
         marginTop: StatusBar.currentHeight
