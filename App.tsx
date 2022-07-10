@@ -13,7 +13,7 @@
 // import { Text, Block, Button, Checkbox, Image, Input, Switch, Modal } from './src/components/';
 // import Icon from 'react-native-vector-icons/Entypo';
 // // import AppNavigation from './src/navigation/App';
-// const App = () => {
+// const App = () => { 
 //   const [showModal, setModal] = useState(false);
 //   const [quantity, setQuantity] = useState('01');
 //   const [switch1, setSwitch1] = useState(true);
@@ -83,7 +83,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { View, Text } from 'react-native';
-import { DataProvider } from './src/hooks';
+// import { DataProvider } from './src/hooks';
 import AppNavigation from './src/navigation/App';
 import Menu from './src/navigation/Menu';
 export default function App() {

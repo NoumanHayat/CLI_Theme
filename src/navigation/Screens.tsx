@@ -2,63 +2,61 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {Articles, Components, Home, Profile, Register, Pro,Creater,ButtonExample,CardExample,InputExample,Shopping} from '../screens';
-import {useScreenOptions, useTranslation} from '../hooks';
-
-const Stack = createStackNavigator();
+import { useTranslation,useData} from '../hooks';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 
 export default () => {
-  const {t} = useTranslation();
-  const screenOptions = useScreenOptions();
+  const { translations } = useData();
 
   return (
-    <Stack.Navigator screenOptions={screenOptions.stack}> 
-     <Stack.Screen 
+    <Stack.Navigator > 
+     <Stack.Screen  
       name="Shopping"
       component={Shopping}
-      options={{title: t('navigation.shopping')}}
+      options={{title: translations.navigation.shopping}} 
     />
     <Stack.Screen 
       name="InputExample"
       component={InputExample}
-      options={{title: t('navigation.inputExample')}}
+      options={{title: translations.navigation.inputExample}}
     />
      <Stack.Screen 
         name="CardExample"
         component={CardExample}
-        options={{title: t('navigation.cardExample')}}
+        options={{title: translations.navigation.cardExample}}
 
       />
      <Stack.Screen
         name="ButtonExample"
         component={ButtonExample}
-        options={{title: t('navigation.buttonExample')}}
+        options={{title: translations.navigation.buttonExample}}
 
       />
      <Stack.Screen
         name="Creater" 
         component={Creater}
-        options={{title: t('navigation.creater')}}
+        options={{title: translations.navigation.creater}}
 
       />
       <Stack.Screen 
         name="Home"
         component={Home}
-        options={{title: t('navigation.home')}}
+        options={{title: translations.navigation.home}}
       />
 
       <Stack.Screen
         name="Components"
         component={Components}
-        options={screenOptions.components}
+        
       />
 
       <Stack.Screen
         name="Articles"
         component={Articles}
-        options={{title: t('navigation.articles')}}
+        options={{title: translations.navigation.articles}}
       />
 
-      <Stack.Screen name="Pro" component={Pro} options={screenOptions.pro} />
 
       <Stack.Screen
         name="Profile"
