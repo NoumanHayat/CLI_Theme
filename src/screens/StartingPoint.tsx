@@ -91,10 +91,13 @@ import { Block, Button, Image, Input, Text } from '../components/';
 
 const App = () => {
   const { assets, colors, fonts, gradients, sizes } = useTheme();
-
+ 
   return (
-    <Block safe>
-      <Text h3 style={{ fontFamily: 'OpenSans-Regular' }}>okoooooooooooooooooooooooooooooo</Text>
+    <Block  safe>
+      <Block color={colors.card} flex={0} padding={sizes.padding}>
+        <Input search placeholder={"search"} />
+      </Block>
+      <Text h3 >okoooooooooooooooooooooooooooooo</Text>
 
     </Block>
   ); 

@@ -6,7 +6,16 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Menu from './Menu';
 import { useData, ThemeProvider, TranslationProvider } from '../hooks';
 import Screens from './Screens';
-
+import {
+  BaseNavigationContainer,
+  getActionFromState,
+  getPathFromState,
+  getStateFromPath,
+  NavigationContainerProps,
+  NavigationContainerRef,
+  ParamListBase,
+  validatePathConfig,
+} from '@react-navigation/core'
 export default () => {
   const { isDark, theme, setTheme } = useData();
 
@@ -17,22 +26,12 @@ export default () => {
     return () => {
       StatusBar.setBarStyle('default');
     };
-  }, [isDark]);
+  }, [isDark]); 
 
-  // // load custom fonts
-  // const [fontsLoaded] = useFonts({
-  //   'OpenSans-Light': theme.assets.OpenSansLight,
-  //   'OpenSans-Regular': theme.assets.OpenSansRegular,
-  //   'OpenSans-SemiBold': theme.assets.OpenSansSemiBold,
-  //   'OpenSans-ExtraBold': theme.assets.OpenSansExtraBold,
-  //   'OpenSans-Bold': theme.assets.OpenSansBold,
-  // });
-
-  // // if (!fontsLoaded) {
-  // //   return <AppLoading />;
-  // // }
-
-  const navigationTheme = { 
+ 
+  console.log(String(theme.colors.background))
+  console.log(theme.colors.background)
+  const navigationTheme = {
     ...DefaultTheme,
     dark: isDark,
     colors: {
@@ -46,6 +45,7 @@ export default () => {
     },
   };
 
+// };
   return (
     //  <TranslationProvider>
     <ThemeProvider theme={theme} setTheme={setTheme}>
@@ -55,4 +55,4 @@ export default () => {
     </ThemeProvider>
     //  </TranslationProvider>
   );
-};
+}; 
