@@ -3,7 +3,7 @@ import { Platform, StatusBar } from 'react-native';
 // import { useFonts } from 'expo-font';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
-import Menu from './Menu';
+// import Menu from './Menu';
 import { useData, ThemeProvider, TranslationProvider } from '../hooks';
 import Screens from './Screens';
 import {
@@ -33,13 +33,13 @@ export default () => {
   console.log(theme.colors.background)
   const navigationTheme = {
     ...DefaultTheme,
-    dark: isDark,
+    dark: isDark, 
     colors: {
       ...DefaultTheme.colors,
       border: 'rgba(0,0,0,0)',
       text: String(theme.colors.text),
       card: String(theme.colors.card),
-      primary: String(theme.colors.primary),
+      primary: String(theme.colors.primary), 
       notification: String(theme.colors.primary),
       background: String(theme.colors.background),
     },
