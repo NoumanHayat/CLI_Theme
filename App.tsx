@@ -83,7 +83,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { View, Text } from 'react-native';
-// import { DataProvider } from './src/hooks';
+import { DataProvider } from './src/hooks';
 import AppNavigation from './src/navigation/App';
 import Menu from './src/navigation/Menu';
 export default function App() {
