@@ -1,22 +1,12 @@
-
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useData, useTheme } from '../hooks';
-
-import { Home, Demo, Article, Me, Setting } from '../screens'
-import { COLORS } from '../constants/light';
-import { Block, Button, Input, Switch, Modal, Text, Image } from '../components/';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import { Home, Demo, Search, Me, Setting } from '../screens'
+import { Block, Text, Image } from '../components/';
 const Tab = createBottomTabNavigator();
-
 export default function App() {
   const { translations } = useData();
   const { assets, colors, gradients, sizes, icons } = useTheme();
-
-
   return (
     <Tab.Navigator independent={true} screenOptions={{
       headerShown: false,
@@ -63,7 +53,7 @@ export default function App() {
           }
         }} />
 
-      <Tab.Screen name={translations.screens.Article} component={Article}
+      <Tab.Screen name={translations.screens.Search} component={Search}
         options={{
           tabBarIcon({ focused }) {
             return (
