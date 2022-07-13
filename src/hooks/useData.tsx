@@ -21,8 +21,8 @@ export const DataContext = React.createContext({});
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [translations, setTranslations] = useState(en);
-  const [isDark, setIsDark] = useState(false);
-  const [theme, setTheme] = useState<ITheme>(light);
+  const [isDark, setIsDark] = useState(true);
+  const [theme, setTheme] = useState<ITheme>(dark);
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
   const [following, setFollowing] = useState<IProduct[]>(FOLLOWING);

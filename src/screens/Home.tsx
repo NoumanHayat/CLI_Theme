@@ -136,7 +136,7 @@ const Articles = () => {
   }, [data, selected, setArticles]);
 
   return (
-    <Block >
+    <Block  >
       {/* categories list */}
       <Block color={colors.card} row flex={0} paddingVertical={sizes.padding}>
         <Block

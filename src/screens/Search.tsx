@@ -18,8 +18,9 @@ const Home = () => {
     [following, trending, setTab, setProducts],
   );
 
+  // return (<Text>hello</Text>)
   return (
-    <Block safe>
+    <Block >
       {/* search input */}
       <Block color={colors.card} flex={0} padding={sizes.padding}>
         <Input search placeholder={translations.common.search} />
@@ -82,18 +83,7 @@ const Home = () => {
         </Button>
       </Block>
 
-      {/* products list */}
-      <Block
-        scroll
-        paddingHorizontal={sizes.padding}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: sizes.l}}>
-        <Block row wrap="wrap" justify="space-between" marginTop={sizes.sm}>
-          {products?.map((product) => (
-            <Product {...product} key={`card-${product?.id}`} />
-          ))}
-        </Block>
-      </Block>
+     
     </Block>
   );
 };

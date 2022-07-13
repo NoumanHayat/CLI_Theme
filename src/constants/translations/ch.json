@@ -1,7 +1,7 @@
 {
   "creater": {
-    "name": "李 陈 ",
-    "loucation": "伊斯兰堡, 巴基斯坦",
+    "name": "Nouman Hayat",
+    "loucation": "Islamabad, Pakistan",
     "introduction": "I am student of comsats university. I love programming and I love to create new things. I created this theme just for fun i hope this will be helpful. ",
     "introduction_2": "This theme is avalible on gitHub and  soon i will upload complete details of this theme on my website. "
   },
@@ -61,11 +61,21 @@
   },
   "darkMode": "Dark Mode",
   "screens": {
-    "StartingPoint": "StartingPoint"
+    "StartingPoint": "StartingPoint",
+    "Home": "Home",
+    "Setting": "Setting",
+    "Demo": "Demo",
+    "Me": "Me",
+    "Search":"Search"
 
   },
   "navigation": {
-    "StartingPoint": "StartingPoint"
+    "StartingPoint": "StartingPoint",
+    "Home": "Home",
+    "Setting": "Setting",
+    "Demo": "Demo",
+    "Me": "Me",
+    "Search":"Search"
   },
   "menu": {
     "started": "Getting Started",

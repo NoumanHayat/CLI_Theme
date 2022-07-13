@@ -187,7 +187,7 @@ const Block = (props: IBlockProps) => {
     return (
 
       <SafeAreaView {...blockID} {...rest} style={[{
-        alignItems: 'center', justifyContent: 'center', top: 10
+        alignItems: 'center', justifyContent: 'center'
       }, blockStyles]}>
         {children}
       </SafeAreaView>
