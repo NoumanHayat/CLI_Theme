@@ -27,8 +27,6 @@ export default () => {
       StatusBar.setBarStyle('default');
     };
   }, [isDark]); 
-
- 
   const navigationTheme = {
     ...DefaultTheme,
     dark: isDark, 

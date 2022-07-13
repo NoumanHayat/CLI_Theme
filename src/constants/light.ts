@@ -46,8 +46,8 @@ export const COLORS: ThemeColors = {
 
   /** UI colors for navigation & card */
   card: '#FAFAFA',
-  background: '#fffff',
-  // background: '#618BF3',
+  // background: '#fffff',
+   background: '#FFFFFF',
 
 
   /** UI color for shadowColor */

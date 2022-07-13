@@ -49,6 +49,8 @@ export default function App() {
           },
           headerStyle: {
             backgroundColor: '#EDF3F7',
+            borderRadius:10,
+
 
           },
           headerTintColor: '#000203',

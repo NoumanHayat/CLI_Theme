@@ -116,7 +116,7 @@ const Articles = () => {
 
   // init articles    
   useEffect(() => {
-    console.log(data.articles[0])
+
     setArticles(data?.articles);
     setCategories(data?.categories);
     setSelected(data?.categories[0]);
@@ -138,8 +138,12 @@ const Articles = () => {
   return (
     <Block  >
       {/* categories list */}
-      <Block color={colors.card} row flex={0} paddingVertical={sizes.padding}>
+      <Block color={colors.card} row style={{
+        borderRadius: 10,
+        borderWidth: 1,
+      }} flex={0} paddingVertical={sizes.padding}>
         <Block
+
           scroll
           horizontal
           renderToHardwareTextureAndroid
