@@ -26,6 +26,7 @@ const Block = (props: IBlockProps) => {
     overflow,
     row,
     safe,
+    TabBarIcon,
     keyboard,
     scroll,
     color,
@@ -173,10 +174,20 @@ const Block = (props: IBlockProps) => {
 
   if (safe) {
     return (
-     
+
       <SafeAreaView {...blockID} {...rest} style={[{
         flex: 1,
         marginTop: StatusBar.currentHeight
+      }, blockStyles]}>
+        {children}
+      </SafeAreaView>
+    );
+  }
+  if (TabBarIcon) {
+    return (
+
+      <SafeAreaView {...blockID} {...rest} style={[{
+        alignItems: 'center', justifyContent: 'center', top: 10
       }, blockStyles]}>
         {children}
       </SafeAreaView>

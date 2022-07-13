@@ -36,6 +36,7 @@ export interface IBlockProps
    * id for testID & accesibilityLabel
    */
   id?: string;
+  
   /**
    * Renders a View flex style
    * @see https://reactnative.dev/docs/flexbox#proptypes
@@ -57,6 +58,7 @@ export interface IBlockProps
    * @see https://reactnative.dev/docs/safeareaview
    */
   safe?: boolean;
+  TabBarIcon?: boolean;
   /**
    * Renders a KeyboardAwareScrollView component
    * @see https://github.com/APSL/react-native-keyboard-aware-scroll-view#usage
@@ -493,6 +495,7 @@ export interface IImageProps extends ImageProps, ISpacing {
    */
   id?: string;
   height?: ViewStyle['height'];
+  source?: ImageProps['source'];
   /**
    * Renders a custom width value
    * @see https://reactnative.dev/docs/layout-props#width

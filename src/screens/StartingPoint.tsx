@@ -1,19 +1,21 @@
 
 import * as React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useData, useTheme } from '../hooks';
 
 import { Home, Demo, Article, Me, Setting } from '../screens'
 import { COLORS } from '../constants/light';
-import { Block, Button, Input, Switch, Modal, Text } from '../components/';
+import { Block, Button, Input, Switch, Modal, Text, Image } from '../components/';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   const { translations } = useData();
   const { assets, colors, gradients, sizes, icons } = useTheme();
+
 
   return (
     <Tab.Navigator independent={true} screenOptions={{
@@ -28,20 +30,17 @@ export default function App() {
         elevation: 10,
         backgroundColor: colors.contrasting,
         borderRadius: 10,
-        height: 90,
-        ...styles.shadow
-
+        height: 70,
       }
 
     }} >
       <Tab.Screen name={translations.screens.Home} component={Home}
         options={{
           tabBarIcon({ focused }) {
+            // <a href="https://www.flaticon.com/free-icons/homepage" title="homepage icons">Homepage icons created by Freepik - Flaticon</a>
             return (
-              <Block style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-                <Image source={require('../assets/icons/apple.png')} resizeMode='contain' style={{
-                  width: 25,
-                  height: 25,
+              <Block TabBarIcon>
+                <Image source={icons.register} resizeMode='contain' width={25} height={25} style={{
                   tintColor: focused ? colors.primary : colors.matching
                 }} />
                 <Text style={{ color: focused ? colors.primary : colors.matching, fontSize: 20 }}>Home</Text>
@@ -54,10 +53,8 @@ export default function App() {
         options={{
           tabBarIcon({ focused }) {
             return (
-              <Block style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-                <Image source={require('../assets/icons/apple.png')} resizeMode='contain' style={{
-                  width: 25,
-                  height: 25,
+              <Block TabBarIcon>
+                <Image source={icons.documentation} resizeMode='contain' width={25} height={25} style={{
                   tintColor: focused ? colors.primary : colors.matching
                 }} />
                 <Text style={{ color: focused ? colors.primary : colors.matching, fontSize: 20 }}>Home</Text>
@@ -70,10 +67,8 @@ export default function App() {
         options={{
           tabBarIcon({ focused }) {
             return (
-              <Block style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-                <Image source={require('../assets/icons/apple.png')} resizeMode='contain' style={{
-                  width: 25,
-                  height: 25,
+              <Block TabBarIcon>
+                <Image source={icons.search} resizeMode='contain' width={45} height={45} style={{
                   tintColor: focused ? colors.primary : colors.matching
                 }} />
                 <Text style={{ color: focused ? colors.primary : colors.matching, fontSize: 20 }}>Home</Text>
@@ -81,15 +76,11 @@ export default function App() {
             )
           }
         }} />
-
-
       <Tab.Screen name={translations.screens.Me} component={Me} options={{
         tabBarIcon({ focused }) {
           return (
-            <Block style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-              <Image source={require('../assets/icons/apple.png')} resizeMode='contain' style={{
-                width: 25,
-                height: 25,
+            <Block TabBarIcon>
+              <Image source={icons.profile} resizeMode='contain' width={25} height={25} style={{
                 tintColor: focused ? colors.primary : colors.matching
               }} />
               <Text style={{ color: focused ? colors.primary : colors.matching, fontSize: 20 }}>Home</Text>
@@ -100,10 +91,8 @@ export default function App() {
       <Tab.Screen name={translations.screens.Setting} component={Setting} options={{
         tabBarIcon({ focused }) {
           return (
-            <Block style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-              <Image source={require('../assets/icons/apple.png')} resizeMode='contain' style={{
-                width: 25,
-                height: 25,
+            <Block TabBarIcon>
+              <Image source={icons.settings} resizeMode='contain' width={25} height={25} style={{
                 tintColor: focused ? colors.primary : colors.matching
               }} />
               <Text style={{ color: focused ? colors.primary : colors.matching, fontSize: 20 }}>Home</Text>
@@ -115,14 +104,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  //change needed here
-  shadowColor: "#7F5DF0",
-  shadowOffSet: {
-    width: 0,
-    height: 10,
-  },
-  shadowOpacity: 0.25,
-  shadowRadious: 3.5,
-  elevation: 5
-})
