@@ -140,7 +140,7 @@ const Articles = () => {
       {/* categories list */}
       <Block color={colors.card} row style={{
         borderRadius: 10,
-        borderWidth: 1,
+        
       }} flex={0} paddingVertical={sizes.padding}>
         <Block
 
