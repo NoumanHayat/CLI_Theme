@@ -61,11 +61,21 @@
   },
   "darkMode": "Dark Mode",
   "screens": {
-    "StartingPoint": "StartingPoint"
+    "StartingPoint": "StartingPoint",
+    "Home": "Home",
+    "Setting": "Setting",
+    "Demo": "Demo",
+    "Me": "Me",
+    "Article":"Article"
 
   },
   "navigation": {
-    "StartingPoint": "StartingPoint"
+    "StartingPoint": "StartingPoint",
+    "Home": "Home",
+    "Setting": "Setting",
+    "Demo": "Demo",
+    "Me": "Me",
+    "Article":"Article"
   },
   "menu": {
     "started": "Getting Started",

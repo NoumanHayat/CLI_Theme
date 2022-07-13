@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import {  StartingPoint } from '../screens';
-import { useTranslation, useData } from '../hooks';
+import {  useData } from '../hooks';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
