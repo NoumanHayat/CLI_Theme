@@ -12,7 +12,7 @@ export default () => {
 
   return (
     <Stack.Navigator screenOptions={{
-      headerShown: false
+      // headerShown: false
     }} > 
       <Stack.Screen
         name="Starting Point"

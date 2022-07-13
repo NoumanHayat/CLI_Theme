@@ -6,6 +6,7 @@ import Modal from './Modal';
 import Switch from './Switch';
 import Checkbox from './Checkbox';
 import Image from './Image';
+import Article from './Article';
 
 
 export {
@@ -16,5 +17,6 @@ export {
   Switch,
   Checkbox,
   Image,
+  Article,
   Modal,
 };

@@ -29,8 +29,6 @@ export default () => {
   }, [isDark]); 
 
  
-  console.log(String(theme.colors.background))
-  console.log(theme.colors.background)
   const navigationTheme = {
     ...DefaultTheme,
     dark: isDark, 
