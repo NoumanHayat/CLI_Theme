@@ -6,5 +6,13 @@ This theme provide following features
 - Button/Textbox/Card of all types
 
 ### Light Mode 
-Articals
-  <img src="https://noumanhayat.com/Theme_Photos/light_Home.PNG" width="350" title="hover text">
+<img src="https://noumanhayat.com/Theme_Photos/light_Home.PNG" width="350" title="hover text">
+### Light Mode Button Example
+<img src="https://noumanhayat.com/Theme_Photos/light_demo_button.PNG" width="350" title="hover text">
+### Light Mode Card Example
+<img src="https://noumanhayat.com/Theme_Photos/light_demo_card.PNG" width="350" title="hover text">
+### Light Mode TextBox Example
+<img src="https://noumanhayat.com/Theme_Photos/light_demo_input.PNG" width="350" title="hover text">
+### Light Mode Introduction Example
+<img src="https://noumanhayat.com/Theme_Photos/light_demo_me.PNG" width="350" title="hover text">
+
