@@ -1,12 +1,13 @@
 {
   "creater": {
-    "name": "Nouman Hayat",
-    "loucation": "Islamabad, Pakistan",
-    "introduction": "I am student of comsats university. I love programming and I love to create new things. I created this theme just for fun i hope this will be helpful. ",
-    "introduction_2": "This theme is avalible on gitHub and  soon i will upload complete details of this theme on my website. "
+    "name": "努曼哈亚特",
+    "loucation": "巴基斯坦伊斯兰堡",
+    "introduction": "我是 通信卫星 大学的学生。我喜欢编程，也喜欢创造新事物。我创建这个主题只是为了好玩，我希望这会有所帮助。 ",
+    "introduction_2": "这个主题在 gitHub 上可用，很快我会在我的网站上上传这个主题的完整细节。"
   },
   "common": {
-    "appDetails": "App Details",
+    "language":"中国人",
+    "appDetails": "应用详情",
     "appName": "Nouman's App", 
     "appVersion": "1.0",
     "buildVersion": "1.0",
@@ -62,50 +63,31 @@
   "darkMode": "Dark Mode",
   "screens": {
     "StartingPoint": "StartingPoint",
-    "Home": "Home",
-    "Setting": "Setting",
-    "Demo": "Demo",
-    "Me": "Me",
-    "Search":"Search"
+    "Home": "家",
+    "Setting": "环境",
+    "Demo": "演示",
+    "Me": "我",
+    "Search":"搜索"
 
   },
   "navigation": {
     "StartingPoint": "StartingPoint",
-    "Home": "Home",
-    "Setting": "Setting",
-    "Demo": "Demo",
-    "Me": "Me",
-    "Search":"Search"
-  },
-  "menu": {
-    "started": "Getting Started",
-    "documentation": "Documentation"
-  },
+    "Home": "家",
+    "Setting": "环境",
+    "Demo":"演示",
+    "Me": "我",
+    "Search":"搜索"
+  }
+  ,
+  "data":{
+    "Contact_US":"联系我们",
+    "Change_Language":"改变语言",
+    "Change_Language_Message":"语言变了"
+  }
+  ,
   "home": {
-    "title": "NH UI",
-    "following": "Following",
-    "trending": "Trending"
-  },
-  "register": {
-    "title": "Welcome",
-    "subtitle": "Register with"
-  },
-  "profile": {
-    "title": "Profile", 
-    "posts": "Posts",
-    "followers": "Followers",
-    "following": "Following",
-    "aboutMe": "About me"
-  },
-  "pro": {
-    "title": "NH UI PRO",
-    "alert": "This feature is available in PRO version",
-    "components": "• {{count} Components (Buttons, Inputs, Cards, etc)",
-    "screens": "• {{count} Screens (Shopping, Notifications, Chat, etc)",
-    "support": "• Premium Support included",
-    "takeAdvantage": "Take advantage of all the features and screens coded on React Native for both",
-    "appTemplate": "NH UI PRO React Native is an innovative app template that will help you built stunning mobile applications in no time. It features a huge number of components and screens built to fit together and look amazing:",
-    "saveTime": "This modern app template will save you a lot of time going from prototyping to full-functional code, because all elements are implemented. We wanted the design process to be seamless, so switching from image to the real page is very easy to do!",
-    "buyNow": "Buy now"
+    "title": "新罕布什尔州",
+    "following": "下列的",
+    "trending": "趋势"
   }
 }

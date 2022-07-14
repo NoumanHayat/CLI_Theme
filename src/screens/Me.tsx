@@ -50,7 +50,7 @@ const Pro = () => {
         <Text semibold  marginTop={0}>{translations.creater.introduction_2}</Text>
         <Block padding={sizes.xl} paddingTop={0}>
           <Button gradient={gradients.primary} onPress={() => alert("Under Process")}>
-            <Text p color={colors.matching}>Context US</Text>
+            <Text p color={colors.matching}>{translations.data.Contact_US}</Text>
           </Button>
         </Block>
       </Block>

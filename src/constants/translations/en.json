@@ -6,11 +6,12 @@
     "introduction_2": "This theme is avalible on gitHub and  soon i will upload complete details of this theme on my website. "
   },
   "common": {
+    "language":"English",
     "appDetails": "App Details",
     "appName": "Nouman's App", 
     "appVersion": "1.0",
     "buildVersion": "1.0",
-    "about": "About",
+    "about": "About", 
     "visit": "Visit",
     "posted": "Posted on {{date}}",
     "recommended": "Recommended for you",
@@ -77,35 +78,14 @@
     "Me": "Me",
     "Search":"Search"
   },
-  "menu": {
-    "started": "Getting Started",
-    "documentation": "Documentation"
+  "data":{
+    "Contact_US":"Contact us",
+    "Change_Language":"Change Language",
+    "Change_Language_Message":"language is changed"
   },
   "home": {
     "title": "NH UI",
     "following": "Following",
     "trending": "Trending"
-  },
-  "register": {
-    "title": "Welcome",
-    "subtitle": "Register with"
-  },
-  "profile": {
-    "title": "Profile", 
-    "posts": "Posts",
-    "followers": "Followers",
-    "following": "Following",
-    "aboutMe": "About me"
-  },
-  "pro": {
-    "title": "NH UI PRO",
-    "alert": "This feature is available in PRO version",
-    "components": "• {{count} Components (Buttons, Inputs, Cards, etc)",
-    "screens": "• {{count} Screens (Shopping, Notifications, Chat, etc)",
-    "support": "• Premium Support included",
-    "takeAdvantage": "Take advantage of all the features and screens coded on React Native for both",
-    "appTemplate": "NH UI PRO React Native is an innovative app template that will help you built stunning mobile applications in no time. It features a huge number of components and screens built to fit together and look amazing:",
-    "saveTime": "This modern app template will save you a lot of time going from prototyping to full-functional code, because all elements are implemented. We wanted the design process to be seamless, so switching from image to the real page is very easy to do!",
-    "buyNow": "Buy now"
   }
 }
