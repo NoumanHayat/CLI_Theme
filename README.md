@@ -7,5 +7,4 @@ This theme provide following features
 
 ### Light Mode 
 Articals
-![alt text]([http://url/to/img.png](https://noumanhayat.com/Theme_Photos/light_Home.PNG))
   <img src="https://noumanhayat.com/Theme_Photos/light_Home.PNG" width="350" title="hover text">
