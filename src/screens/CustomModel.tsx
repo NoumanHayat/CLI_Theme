@@ -60,7 +60,8 @@ const App = () => {
 
 
         <Block>
-\            <Button
+            <Text style={{color:'red'}} >okk</Text>
+            <Button
                 flex={1}
                 row
                 gradient={gradients.dark}
