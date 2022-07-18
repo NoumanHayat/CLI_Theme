@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {  StartingPoint } from '../screens';
-import {  useData } from '../hooks';
+import { StartingPoint, CustomModel } from '../screens';
+import { useData } from '../hooks';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 
@@ -12,8 +12,16 @@ export default () => {
 
   return (
     <Stack.Navigator screenOptions={{
-       headerShown: false
-    }} > 
+      headerShown: false
+    }} >
+
+
+      <Stack.Screen
+        name="Custom Model"
+        component={CustomModel}
+        options={{ title: 'CustomModel' }}
+      />
+
       <Stack.Screen
         name="Starting Point"
         component={StartingPoint}

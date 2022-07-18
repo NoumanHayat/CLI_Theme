@@ -4,3 +4,4 @@ export {default as Home} from './Home';
 export {default as Me} from './Me';
 export {default as Setting} from './Setting';
 export {default as Search} from './Search';
+export {default as CustomModel} from './CustomModel';
