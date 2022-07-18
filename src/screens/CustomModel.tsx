@@ -4,13 +4,13 @@ import {
     StyleSheet,
 
     Image,
-    
-    
+
+
     TouchableOpacity,
     FlatList,
     Animated,
 } from 'react-native';
-import { Block, Button, Modal,Text } from '../components/';
+import { Block, Button, Modal, Text } from '../components/';
 
 import { useTheme } from '../hooks/';
 
@@ -24,7 +24,7 @@ const ModalPoup = ({ visible, children }) => {
         if (visible) {
             setShowModal(true);
             Animated.spring(scaleValue, {
-                toValue: 1, 
+                toValue: 1,
                 duration: 300,
                 useNativeDriver: true,
             }).start();
@@ -38,7 +38,7 @@ const ModalPoup = ({ visible, children }) => {
         }
     };
     return (
-        <Modal transparent visible={showModal}> 
+        <Modal transparent visible={showModal}>
             <View style={styles.modalBackGround}>
                 <Animated.View
                     style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
@@ -60,7 +60,6 @@ const App = () => {
 
 
         <Block>
-            <Text style={{color:'red'}} >okk</Text>
             <Button
                 flex={1}
                 row
@@ -81,7 +80,7 @@ const App = () => {
                     />
                 </Block>
             </Button>
-            <Modal visible={showModal} onRequestClose={() => setModal(false)}>
+            <Modal position={'top'} visible={showModal} onRequestClose={() => setModal(false)}>
                 <FlatList
                     keyExtractor={(index) => `${index}`}
                     data={['01', '02', '03', '04', '05']}
@@ -92,7 +91,7 @@ const App = () => {
                                 setQuantity(item);
                                 setModal(false);
                             }}>
-                            <Text p   semibold transform="uppercase">
+                            <Text p semibold transform="uppercase">
                                 {item}
                             </Text>
                         </Button>

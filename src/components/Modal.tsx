@@ -31,14 +31,14 @@ const Modal = ({
         style={modalStyles}
         animationType="slide"
         onRequestClose={onRequestClose}>
-        <Block backgroundColor={colors.contrastingLight}  justify="flex-end">
+        <Block backgroundColor={colors.contrastingLight} justify="flex-end">
           <Block safe card flex={0} >
             <Button
               top={0}
-              right={0} 
+              right={0}
               position="absolute"
               onPress={() => onRequestClose?.()}>
-              <Image source={assets.close} color={colors.contrasting}  />
+              <Image source={assets.close} color={colors.contrasting} />
             </Button>
             <Block
               flex={0}
@@ -51,7 +51,36 @@ const Modal = ({
         </Block>
       </RNModal>
     );
-  } else {
+  } else if (position == "top") {
+    return (
+      <RNModal
+        {...modalID}
+        {...props}
+        transparent
+        // style={modalStyles}
+        animationType="slide"
+        onRequestClose={onRequestClose}>
+        <Block backgroundColor={colors.contrastingLight} top={-45} justify="flex-start">
+          <Block safe card flex={0} >
+            <Button
+              top={0}
+              right={0}
+              position="absolute"
+              onPress={() => onRequestClose?.()}>
+              <Image source={assets.close} color={colors.contrasting} />
+            </Button>
+            <Block
+              flex={0}
+              marginTop={sizes.xxl}
+
+              paddingHorizontal={sizes.padding}>
+              {children}
+            </Block>
+          </Block>
+        </Block>
+      </RNModal>
+    );
+  }else {
     return (
       <RNModal
         {...modalID}
@@ -60,14 +89,14 @@ const Modal = ({
         style={modalStyles}
         animationType={"fade"}
         onRequestClose={onRequestClose}>
-        <Block backgroundColor={colors.contrastingLight}  justify="center">
-          <Block safe margin={sizes.padding}  card flex={0} >
+        <Block backgroundColor={colors.contrastingLight} justify="center">
+          <Block safe margin={sizes.padding} card flex={0} >
             <Button
               top={0}
-              right={0} 
+              right={0}
               position="absolute"
               onPress={() => onRequestClose?.()}>
-              <Image source={assets.close} color={colors.contrasting}  />
+              <Image source={assets.close} color={colors.contrasting} />
             </Button>
             <Block
               flex={0}
