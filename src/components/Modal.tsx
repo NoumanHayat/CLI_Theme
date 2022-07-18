@@ -58,20 +58,21 @@ const Modal = ({
         {...props}
         transparent
         style={modalStyles}
-        animationType="slide"
+        animationType={"fade"}
         onRequestClose={onRequestClose}>
-        <Block justify="flex-end">
-          <Block safe card flex={0} color="rgba(0,0,0,0.8)">
+        <Block backgroundColor={colors.contrastingLight}  justify="center">
+          <Block safe margin={sizes.padding}  card flex={0} >
             <Button
               top={0}
-              right={0}
+              right={0} 
               position="absolute"
               onPress={() => onRequestClose?.()}>
-              <Image source={assets.close} color={colors.primary} />
+              <Image source={assets.close} color={colors.contrasting}  />
             </Button>
             <Block
               flex={0}
               marginTop={sizes.xxl}
+
               paddingHorizontal={sizes.padding}>
               {children}
             </Block>

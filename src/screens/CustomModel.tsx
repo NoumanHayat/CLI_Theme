@@ -4,12 +4,13 @@ import {
     StyleSheet,
 
     Image,
-    Text,
+    
+    
     TouchableOpacity,
     FlatList,
     Animated,
 } from 'react-native';
-import { Block, Button, Modal } from '../components/';
+import { Block, Button, Modal,Text } from '../components/';
 
 import { useTheme } from '../hooks/';
 
@@ -23,7 +24,7 @@ const ModalPoup = ({ visible, children }) => {
         if (visible) {
             setShowModal(true);
             Animated.spring(scaleValue, {
-                toValue: 1,
+                toValue: 1, 
                 duration: 300,
                 useNativeDriver: true,
             }).start();
@@ -37,7 +38,7 @@ const ModalPoup = ({ visible, children }) => {
         }
     };
     return (
-        <Modal transparent visible={showModal}>
+        <Modal transparent visible={showModal}> 
             <View style={styles.modalBackGround}>
                 <Animated.View
                     style={[styles.modalContainer, { transform: [{ scale: scaleValue }] }]}>
@@ -59,7 +60,7 @@ const App = () => {
 
 
         <Block>
-            <Button
+\            <Button
                 flex={1}
                 row
                 gradient={gradients.dark}
@@ -79,7 +80,7 @@ const App = () => {
                     />
                 </Block>
             </Button>
-            <Modal position={"bottom"} visible={showModal} onRequestClose={() => setModal(false)}>
+            <Modal visible={showModal} onRequestClose={() => setModal(false)}>
                 <FlatList
                     keyExtractor={(index) => `${index}`}
                     data={['01', '02', '03', '04', '05']}
@@ -90,7 +91,7 @@ const App = () => {
                                 setQuantity(item);
                                 setModal(false);
                             }}>
-                            <Text p white semibold transform="uppercase">
+                            <Text p   semibold transform="uppercase">
                                 {item}
                             </Text>
                         </Button>
@@ -186,18 +187,18 @@ export default App;
 
 // const styles = StyleSheet.create({
 //   modalBackGround: {
-//     flex: 1,
-//     backgroundColor: 'rgba(0,0,0,0.5)',
-//     justifyContent: 'center',
-//     alignItems: 'center',
+    // flex: 1,
+    // backgroundColor: 'rgba(0,0,0,0.5)',
+    // justifyContent: 'center',
+    // alignItems: 'center',
 //   },
 //   modalContainer: {
-//     width: '80%',
-//     backgroundColor: 'white',
-//     paddingHorizontal: 20,
-//     paddingVertical: 30,
-//     borderRadius: 20,
-//     elevation: 20,
+    // width: '80%',
+    // backgroundColor: 'white',
+    // paddingHorizontal: 20,
+    // paddingVertical: 30,
+    // borderRadius: 20,
+    // elevation: 20,
 //   },
 //   header: {
 //     width: '100%',
