@@ -668,6 +668,7 @@ export interface IModalProps extends ModalProps {
   //possible error
    onRequestClose?:(checked: boolean)=> void;
   id?: string;
+  position?: string;
   /**
    * Renders the Modal content
    */

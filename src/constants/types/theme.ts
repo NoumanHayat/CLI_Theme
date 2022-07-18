@@ -80,6 +80,7 @@ export interface ThemeColors {
   primary: ColorValue;
   contrasting: ColorValue;
   matching: ColorValue;
+  contrastingLight: ColorValue;
   secondary: ColorValue;
   tertiary: ColorValue;
   black: ColorValue;

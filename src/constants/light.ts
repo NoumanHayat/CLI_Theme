@@ -13,6 +13,9 @@ export const COLORS: ThemeColors = {
   text: '#252F40',
   // opposite of text color
   contrasting: '#030C45',
+  //light contrasting
+  contrastingLight: 'rgba(0, 0, 0,0.5)',
+  //  '#030C45',
   // match color
   matching: '#EDEEF6',
   // base colors

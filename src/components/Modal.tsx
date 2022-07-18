@@ -1,54 +1,87 @@
 import React from 'react';
-import {StyleSheet, Modal as RNModal, ViewStyle, Platform} from 'react-native';
+import { StyleSheet, Modal as RNModal, ViewStyle, Platform } from 'react-native';
 
-import {useTheme} from '../hooks/';
+import { useTheme } from '../hooks/';
 
 import Block from './Block';
 import Button from './Button';
 import Image from './Image';
-import {IModalProps} from '../constants/types';
+import { IModalProps } from '../constants/types';
 
 const Modal = ({
   id = 'Modal',
   children,
   style,
   onRequestClose,
+  position,
   ...props
 }: IModalProps) => {
-  const {assets, colors, sizes} = useTheme();
+  const { assets, colors, sizes } = useTheme();
   const modalStyles = StyleSheet.flatten([style, {}]) as ViewStyle;
 
   // generate component testID or accessibilityLabel based on Platform.OS
   const modalID =
-    Platform.OS === 'android' ? {accessibilityLabel: id} : {testID: id};
+    Platform.OS === 'android' ? { accessibilityLabel: id } : { testID: id };
+  if (position == "bottom") {
+    return (
+      <RNModal
+        {...modalID}
+        {...props}
+        transparent
+        style={modalStyles}
+        animationType="slide"
+        onRequestClose={onRequestClose}>
+        <Block backgroundColor={colors.contrastingLight}  justify="flex-end">
+          <Block safe card flex={0} >
+            <Button
+              top={0}
+              right={0} 
+              position="absolute"
+              onPress={() => onRequestClose?.()}>
+              <Image source={assets.close} color={colors.contrasting}  />
+            </Button>
+            <Block
+              flex={0}
+              marginTop={sizes.xxl}
 
-  return (
-    <RNModal
-      {...modalID}
-      {...props}
-      transparent
-      style={modalStyles}
-      animationType="slide"
-      onRequestClose={onRequestClose}>
-      <Block justify="flex-end">
-        <Block safe card flex={0} color="rgba(0,0,0,0.8)">
-          <Button
-            top={0}
-            right={0}
-            position="absolute"
-            onPress={() => onRequestClose?.()}>
-            <Image source={assets.close} color={colors.white} />
-          </Button>
-          <Block
-            flex={0}
-            marginTop={sizes.xxl}
-            paddingHorizontal={sizes.padding}>
-            {children}
+              paddingHorizontal={sizes.padding}>
+              {children}
+            </Block>
           </Block>
         </Block>
-      </Block>
-    </RNModal>
-  );
+      </RNModal>
+    );
+  } else {
+    return (
+      <RNModal
+        {...modalID}
+        {...props}
+        transparent
+        style={modalStyles}
+        animationType="slide"
+        onRequestClose={onRequestClose}>
+        <Block justify="flex-end">
+          <Block safe card flex={0} color="rgba(0,0,0,0.8)">
+            <Button
+              top={0}
+              right={0}
+              position="absolute"
+              onPress={() => onRequestClose?.()}>
+              <Image source={assets.close} color={colors.primary} />
+            </Button>
+            <Block
+              flex={0}
+              marginTop={sizes.xxl}
+              paddingHorizontal={sizes.padding}>
+              {children}
+            </Block>
+          </Block>
+        </Block>
+      </RNModal>
+    );
+  }
+
+
 };
 
 export default React.memo(Modal);

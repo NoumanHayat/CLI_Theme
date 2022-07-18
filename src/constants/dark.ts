@@ -9,10 +9,12 @@ import {
 import {THEME as commonTheme} from './theme';
 
 export const COLORS: ThemeColors = {
-  // default text color
+  // default text color 
   text: '#FBFBFC',
   // opposite of text color
   contrasting: '#EDEEF6',
+  //light contrasting
+  contrastingLight: 'rgba(255, 255, 255,0.5)',
   // match color
   matching: '#030C45',
   // base colors
