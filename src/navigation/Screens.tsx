@@ -14,13 +14,13 @@ export default () => {
     <Stack.Navigator screenOptions={{
       headerShown: false
     }} >
-
+{/* 
 
       <Stack.Screen
         name="Custom Model"
         component={CustomModel}
         options={{ title: 'CustomModel' }}
-      />
+      /> */}
 
       <Stack.Screen
         name="Starting Point"

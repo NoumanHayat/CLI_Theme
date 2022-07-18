@@ -80,7 +80,7 @@ const App = () => {
                     />
                 </Block>
             </Button>
-            <Modal position={'top'} visible={showModal} onRequestClose={() => setModal(false)}>
+            <Modal  visible={showModal} onRequestClose={() => setModal(false)}>
                 <FlatList
                     keyExtractor={(index) => `${index}`}
                     data={['01', '02', '03', '04', '05']}
