@@ -16,6 +16,7 @@ import {
   ParamListBase,
   validatePathConfig,
 } from '@react-navigation/core'
+
 export default () => {
   const { isDark, theme, setTheme } = useData();
 
