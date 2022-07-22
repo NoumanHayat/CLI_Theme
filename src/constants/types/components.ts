@@ -36,7 +36,7 @@ export interface IBlockProps
    * id for testID & accesibilityLabel
    */
   id?: string;
-  
+
   /**
    * Renders a View flex style
    * @see https://reactnative.dev/docs/flexbox#proptypes
@@ -69,6 +69,8 @@ export interface IBlockProps
    * @see https://reactnative.dev/docs/scrollview
    */
   scroll?: boolean;
+  safeScroll?: boolean;
+  backgroundColor?:string;
   /**
    * Generates a shadow style
    * @see https://reactnative.dev/docs/shadow-props

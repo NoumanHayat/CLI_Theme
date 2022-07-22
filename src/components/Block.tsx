@@ -72,6 +72,8 @@ const Block = (props: IBlockProps) => {
     bottom,
     end,
     start,
+    safeScroll,
+    backgroundColor,
     ...rest
   } = props;
   const { colors, sizes } = useTheme();
@@ -135,6 +137,7 @@ const Block = (props: IBlockProps) => {
       ...(marginTop && { marginTop }),
       ...(marginHorizontal && { marginHorizontal }),
       ...(marginVertical && { marginVertical }),
+      ...(backgroundColor && {backgroundColor}),
       ...(marginRight && { marginRight }),
       ...(marginLeft && { marginLeft }),
       ...(padding !== undefined && { padding }),
@@ -171,7 +174,21 @@ const Block = (props: IBlockProps) => {
   // generate component testID or accessibilityLabel based on Platform.OS
   const blockID =
     Platform.OS === 'android' ? { accessibilityLabel: id } : { testID: id };
+    if (safeScroll) {
+       return (
 
+         <SafeAreaView {...blockID} {...rest} style={[{
+           flex: 1,
+           marginTop: StatusBar.currentHeight
+         }, blockStyles]}>
+           <ScrollView>
+             {children}
+           </ScrollView>
+
+         </SafeAreaView>
+       );
+
+     }
   if (safe) {
     return (
 
