@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Image,
   TextInput,
@@ -11,13 +11,28 @@ import Block from './Block';
 import Text from './Text';
 
 import useTheme from '../hooks/useTheme';
-import {IInputProps} from '../constants/types';
+import { IInputProps } from '../constants/types';
+import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Foundation from 'react-native-vector-icons/Foundation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Zocial from 'react-native-vector-icons/Zocial';
+
 
 const Input = ({
   id = 'Input',
   style,
   color,
-  primary, 
+  primary,
   secondary,
   tertiary,
   black,
@@ -37,13 +52,16 @@ const Input = ({
   marginVertical,
   marginRight,
   marginLeft,
+  vactoricon,
   vactorIconType,
   vactorIconName,
+  vactorIconSize,
+  vactorIconColor,
   onFocus,
   onBlur,
   ...props
-}:IInputProps) => {
-  const {assets, colors, sizes} = useTheme();
+}: IInputProps) => {
+  const { assets, colors, sizes } = useTheme();
   const [isFocused, setFocused] = useState(false);
 
   const handleFocus = useCallback(
@@ -58,42 +76,42 @@ const Input = ({
   const colorIndex = primary
     ? 'primary'
     : secondary
-    ? 'secondary'
-    : tertiary
-    ? 'tertiary'
-    : black
-    ? 'black'
-    : white
-    ? 'white'
-    : gray
-    ? 'gray'
-    : danger
-    ? 'danger'
-    : warning
-    ? 'warning'
-    : success
-    ? 'success'
-    : info
-    ? 'info'
-   
+      ? 'secondary'
+      : tertiary
+        ? 'tertiary'
+        : black
+          ? 'black'
+          : white
+            ? 'white'
+            : gray
+              ? 'gray'
+              : danger
+                ? 'danger'
+                : warning
+                  ? 'warning'
+                  : success
+                    ? 'success'
+                    : info
+                      ? 'info'
 
-    : null;
+
+                      : null;
   const inputColor = color
     ? color
     : colorIndex
-    ? colors?.[colorIndex]
-    : colors.gray;
+      ? colors?.[colorIndex]
+      : colors.gray;
 
   const inputBoxStyles = StyleSheet.flatten([
     style,
     {
       minHeight: sizes.inputHeight,
-      ...(marginBottom && {marginBottom: marginBottom}),
-      ...(marginTop && {marginTop: marginTop}),
-      ...(marginHorizontal && {marginHorizontal: marginHorizontal}),
-      ...(marginVertical && {marginVertical: marginVertical}),
-      ...(marginRight && {marginRight: marginRight}),
-      ...(marginLeft && {marginLeft: marginLeft}),
+      ...(marginBottom && { marginBottom: marginBottom }),
+      ...(marginTop && { marginTop: marginTop }),
+      ...(marginHorizontal && { marginHorizontal: marginHorizontal }),
+      ...(marginVertical && { marginVertical: marginVertical }),
+      ...(marginRight && { marginRight: marginRight }),
+      ...(marginLeft && { marginLeft: marginLeft }),
     },
   ]) as ViewStyle;
 
@@ -119,7 +137,7 @@ const Input = ({
 
   // generate component testID or accessibilityLabel based on Platform.OS
   const inputID =
-    Platform.OS === 'android' ? {accessibilityLabel: id} : {testID: id};
+    Platform.OS === 'android' ? { accessibilityLabel: id } : { testID: id };
 
   return (
     <Block flex={0} style={inputBoxStyles}>
@@ -131,16 +149,77 @@ const Input = ({
       <Block row align="center" justify="flex-end" style={inputContainerStyles}>
         {search && assets.search && (
           <Image
-            source={assets.search} 
-            style={{marginLeft: sizes.inputPadding, tintColor: colors.icon}}
+            source={assets.search}
+            style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
           />
         )}
+        {/* ========================================Vactor Icon===================================================== */}
+        {vactoricon && (vactorIconType === 'Entypo') && (    
+        <Entypo style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'AntDesign') && (    
+        <AntDesign style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'EvilIcons') && (    
+        <EvilIcons style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'Feather') && (    
+        <Feather style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'FontAwesome') && (    
+        <FontAwesome style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'FontAwesome5') && (    
+        <FontAwesome5 style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'Fontisto') && (    
+        <Fontisto style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'Foundation') && (    
+        <Foundation style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'Ionicons') && (    
+        <Ionicons style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'MaterialCommunityIcons') && (    
+        <MaterialCommunityIcons style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'MaterialIcons') && (    
+        <MaterialIcons style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'Octicons') && (    
+        <Octicons style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'SimpleLineIcons') && (    
+        <SimpleLineIcons style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+        {vactoricon && (vactorIconType === 'Zocial') && (    
+        <Zocial style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
+          name={vactorIconName ? vactorIconName : "500px"} size={vactorIconSize ? vactorIconSize : 15} color={vactorIconColor ? vactorIconColor : "black"} />  
+        )}
+
+        {/* ========================================Vactor Icon===================================================== */}
+
         {icon && (
           <Image
             source={assets?.[icon]}
-            style={{marginLeft: sizes.inputPadding, tintColor: colors.icon}}
+            style={{ marginLeft: sizes.inputPadding, tintColor: colors.icon }}
           />
         )}
+
         <TextInput
           {...inputID}
           {...props}

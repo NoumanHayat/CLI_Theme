@@ -653,6 +653,10 @@ export interface IInputProps extends TextInputProps, ISpacing {
   style?: TextStyle;
   vactorIconType?: string;
   vactorIconName?: string;
+  vactoricon?: boolean;
+  vactorIconSize?: number;
+  vactorIconColor?: string;
+
 }
 
 /**

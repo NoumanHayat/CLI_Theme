@@ -639,12 +639,12 @@ const Inputs = () => {
         <Input icon="search" gray placeholder="Icon with gray" marginBottom={sizes.sm} />
         <Input icon="settings" gray placeholder="Setting Icon with gray" marginBottom={sizes.sm} />
         <Text>Vactor Icon with Input Icon</Text>
-        <Input placeholder="Vactor Icon" marginBottom={sizes.sm} />
+        <Input vactoricon vactorIconName="glass" vactorIconType="FontAwesome" vactorIconColor="red" placeholder="Vactor Icon" marginBottom={sizes.sm} />
       </Block>
     </Block>
   );
 };
-const ShoppingCard = () => {
+const ShoppingCard = () => { 
   const {assets, colors, gradients, sizes} = useTheme();
 
   return (
